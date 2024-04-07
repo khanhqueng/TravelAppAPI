@@ -28,4 +28,15 @@ let createUsers = async (req, res) => {
         res.status(401).send({ err });
     }
 }
-module.exports = { createUsers }
+let getUsers = async (req, res) => {
+    try {
+        const sql = "SELECT * FROM Users";
+        const result = await queryPromise(sql, []);
+        res.status(201).json(result[0]);
+
+    } catch (err) {
+        res.status(401).send({ err });
+    }
+}
+
+module.exports = { createUsers, getUsers }

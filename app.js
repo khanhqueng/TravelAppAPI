@@ -8,7 +8,7 @@ app.use(express.json()); // Used to parse JSON bodies
 app.use(express.urlencoded()); //Parse URL-encoded bodies
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-const { createUsers } = require('./APIcontroller/PUTapi')
+const { createUsers, getUsers } = require('./APIcontroller/PUTapi')
 const port = process.env.PORT || 8090;
 app.listen(port, () => {
     console.log(`Server running on port ${port}`)
@@ -24,3 +24,4 @@ app.post('/api/createUser', createUsers)
 app.get('/', (req, res) => {
     res.send("Hello api")
 })
+app.get('/api/getUsers', getUsers)
