@@ -21,3 +21,6 @@ db.connect((err) => {
     console.log("Success");
 })
 app.post('/api/createUser', createUsers)
+app.get('/', (req, res) => {
+    res.send("Hello api")
+})
