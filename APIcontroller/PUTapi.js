@@ -18,7 +18,7 @@ let createUsers = async (req, res) => {
             throw new Error("Please fill info");
         }
         const issue = [Hoten, Email, Password];
-        const SQL = "INSERT INTO user(Hoten , Email, Password) VALUES (?,?,?)";
+        const SQL = "INSERT INTO User(Hoten , Email, Password) VALUES (?,?,?)";
         const result = await queryPromise(SQL, issue);
         res.status(201).send({ issue });
 
