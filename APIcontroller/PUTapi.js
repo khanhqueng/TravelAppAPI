@@ -30,7 +30,7 @@ let createUsers = async (req, res) => {
 }
 let getUsers = async (req, res) => {
     try {
-        const sql = "SELECT * FROM Users";
+        const sql = "SELECT * FROM User";
         const result = await queryPromise(sql, []);
         res.status(201).json(result[0]);
 
